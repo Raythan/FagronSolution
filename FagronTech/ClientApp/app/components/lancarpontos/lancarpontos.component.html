@@ -1,0 +1,12 @@
+﻿<h1>Lançar Pontos</h1>
+<form ng-form="formulario">
+    <p ng-model="paragrafo_numero_um">
+        Data do jogo<br />
+        <input type="date" [(ngModel)]="data_do_jogo" name="data_do_jogo"/>
+    </p>
+    <p ng-model="paragrafo_numero_dois">
+        Quantos pontos você fez:<br />
+        <input type="number" [(ngModel)]="numero_de_pontos" name="numero_de_pontos"/>
+    </p>
+    <button (click)="salvarPontos()" ng-model="botao_salvar">Salvar</button>
+</form>
