@@ -1,0 +1,24 @@
+﻿<div>
+    <span>Resultados </span><span>{{ detalheCarreira.dataInicial | date:'dd-MM-yyyy' }} até {{ detalheCarreira.dataFinal | date:'dd-MM-yyyy' }}</span>
+</div>
+<div *ngIf="!detalheCarreira"><em>Carregando...</em></div>
+<div *ngIf="detalheCarreira">
+    <div>
+        <span>Jogos disputados </span><span>{{ detalheCarreira.jogosDisputados }}</span>
+    </div>
+    <div>
+        <span>Total de pontos marcados na temporada </span><span>{{ detalheCarreira.totalPontosTemporada }}</span>
+    </div>
+    <div>
+        <span>Média de pontos por jogo </span><span>{{ detalheCarreira.mediaPontosJogos | number : '.1-1' }}</span>
+    </div>
+    <div>
+        <span>Maior pontuação em um jogo </span><span>{{ detalheCarreira.maiorPontuacaoJogos }}</span>
+    </div>
+    <div>
+        <span>Menor pontuação em um jogo </span><span>{{ detalheCarreira.menorPontuacaoJogos }}</span>
+    </div>
+    <div>
+        <span>Quantidade de vezes que bateu o próprio recorde </span><span>{{ detalheCarreira.quantidadeVezesRecorde }}</span>
+    </div>
+</div>

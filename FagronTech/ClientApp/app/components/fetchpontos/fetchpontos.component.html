@@ -1,0 +1,25 @@
+﻿<h1>Lançar Pontos</h1>
+
+<p *ngIf="!pontosList"><em>Carregando...</em></p>
+<table class='table' *ngIf="pontosList">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Data do jogo</th>
+            <th>Quantos pontos você fez:</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let partida of pontosList">
+            <td>{{ partida.id }}</td>
+            <td>{{ partida.dataPartida | date:'dd-MM-yyyy'}}</td>
+            <td>{{ partida.quantidadePontos }}</td>
+            <td>
+                <a [routerLink]="" (click)="deletarPartida(partida.id)">Apagar</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a [routerLink]="['/lancarpontos']">Salvar</a>
+</p>

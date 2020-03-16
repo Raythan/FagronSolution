@@ -1,3 +1,4 @@
+using System;
 using FagronTech.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -21,16 +22,6 @@ namespace FagronTech
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-
-            // Vai adicionar a conexão com o banco de dados.
-            //services.AddRazorPages();
-
-            //services.AddDbContext<FagronTechContext>(options =>
-            //  options.UseSqlServer(Configuration.GetConnectionString("FagronTechContext")));
-
-
-            //services.AddDbContext<BaseDataAccess>(options =>
-            //  options.UseSqlServer(Configuration.GetConnectionString("FagronTechContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

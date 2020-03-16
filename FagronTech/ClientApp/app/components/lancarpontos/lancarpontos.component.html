@@ -1,12 +1,23 @@
 ﻿<h1>Lançar Pontos</h1>
-<form ng-form="formulario">
-    <p ng-model="paragrafo_numero_um">
+
+<form [formGroup]="lancar_pontos_form" name="lancar_pontos_form" (ngSubmit)="salvarPontos()" #formDir="ngForm" novalidate>
+    <p>
         Data do jogo<br />
-        <input type="date" [(ngModel)]="data_do_jogo" name="data_do_jogo"/>
+        <input type="date" formControlName="dataPartida"/>
+
+        <span class="text-danger" *ngIf="dataPartida.invalid && formDir.submitted">
+            Data do jogo é necessário.
+        </span>
     </p>
-    <p ng-model="paragrafo_numero_dois">
+
+    <p>
         Quantos pontos você fez:<br />
-        <input type="number" [(ngModel)]="numero_de_pontos" name="numero_de_pontos"/>
+        <input type="number" formControlName="quantidadePontos"/>
+
+        <span class="text-danger" *ngIf="quantidadePontos.invalid && formDir.submitted">
+            Número de pontos é necessário.
+        </span>
     </p>
-    <button (click)="salvarPontos()" ng-model="botao_salvar">Salvar</button>
+    <button type="submit" class="btn btn-default">Salvar</button>
+    <button class="btn" (click)="cancelar()">Cancelar</button>
 </form>
