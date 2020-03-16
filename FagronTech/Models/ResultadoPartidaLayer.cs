@@ -76,6 +76,7 @@ namespace FagronTech.Models
             retorno.menorPontuacaoJogos = partidas.Min(x => x.QuantidadePontos);
             retorno.mediaPontosJogos = Convert.ToDecimal(partidas.Average(x => x.QuantidadePontos));
             retorno.totalPontosTemporada = partidas.Sum(x => x.QuantidadePontos);
+            retorno.quantidadeVezesRecorde = 0;
 
             partidas = partidas.OrderBy(x => x.Id).ToList();
 
@@ -86,7 +87,7 @@ namespace FagronTech.Models
                 if(novoRecorde < partida.QuantidadePontos)
                 {
                     if (novoRecorde > 0)
-                        retorno.quantidadeVezesRecorde++;
+                        retorno.quantidadeVezesRecorde += 1;
                     novoRecorde = partida.QuantidadePontos;
                 }
             }

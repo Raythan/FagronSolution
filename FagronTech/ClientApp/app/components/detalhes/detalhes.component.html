@@ -1,24 +1,36 @@
-﻿<div>
-    <span>Resultados </span><span>{{ detalheCarreira.dataInicial | date:'dd-MM-yyyy' }} até {{ detalheCarreira.dataFinal | date:'dd-MM-yyyy' }}</span>
-</div>
-<div *ngIf="!detalheCarreira"><em>Carregando...</em></div>
-<div *ngIf="detalheCarreira">
-    <div>
-        <span>Jogos disputados </span><span>{{ detalheCarreira.jogosDisputados }}</span>
-    </div>
-    <div>
-        <span>Total de pontos marcados na temporada </span><span>{{ detalheCarreira.totalPontosTemporada }}</span>
-    </div>
-    <div>
-        <span>Média de pontos por jogo </span><span>{{ detalheCarreira.mediaPontosJogos | number : '.1-1' }}</span>
-    </div>
-    <div>
-        <span>Maior pontuação em um jogo </span><span>{{ detalheCarreira.maiorPontuacaoJogos }}</span>
-    </div>
-    <div>
-        <span>Menor pontuação em um jogo </span><span>{{ detalheCarreira.menorPontuacaoJogos }}</span>
-    </div>
-    <div>
-        <span>Quantidade de vezes que bateu o próprio recorde </span><span>{{ detalheCarreira.quantidadeVezesRecorde }}</span>
-    </div>
-</div>
+﻿<table class="table table-striped" *ngIf="!detalheCarreira">
+    <tr>
+        <td>Carregando...</td>
+    </tr>
+</table>
+<table class="table table-striped" *ngIf="detalheCarreira">
+    <thead>
+        <tr>
+            <td colspan="2">Resultados {{ detalheCarreira.dataInicial | date:'dd-MM-yyyy' }} até {{ detalheCarreira.dataFinal | date:'dd-MM-yyyy' }}</td>
+        </tr>
+    </thead>
+    <tr>
+        <td>Jogos disputados </td>
+        <td>{{ detalheCarreira.jogosDisputados }}</td>
+    </tr>
+    <tr>
+        <td>Total de pontos marcados na temporada </td>
+        <td>{{ detalheCarreira.totalPontosTemporada }}</td>
+    </tr>
+    <tr>
+        <td>Média de pontos por jogo </td>
+        <td>{{ detalheCarreira.mediaPontosJogos | number : '.1-1' }}</td>
+    </tr>
+    <tr>
+        <td>Maior pontuação em um jogo </td>
+        <td>{{ detalheCarreira.maiorPontuacaoJogos }}</td>
+    </tr>
+    <tr>
+        <td>Menor pontuação em um jogo </td>
+        <td>{{ detalheCarreira.menorPontuacaoJogos }}</td>
+    </tr>
+    <tr>
+        <td>Quantidade de vezes que bateu o próprio recorde </td>
+        <td>{{ detalheCarreira.quantidadeVezesRecorde }}</td>
+    </tr>
+</table>
